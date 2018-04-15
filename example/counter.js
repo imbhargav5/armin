@@ -58,7 +58,7 @@ export default class Counter extends Component {
                 <p>
                   <button
                     disabled={!machineController.can.decrement}
-                    onClick={e => machineController.decrement(1)}
+                    onClick={() => machineController.decrement(1)}
                   >
                     Decrement
                   </button>
@@ -74,7 +74,7 @@ export default class Counter extends Component {
                 <p>
                   <button
                     disabled={!machineController.can.stop}
-                    onClick={e => machineController.stop()}
+                    onClick={() => machineController.stop()}
                   >
                     Stop counter
                   </button>
