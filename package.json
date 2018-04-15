@@ -1,0 +1,20 @@
+{
+  "name": "mach-store",
+  "version": "1.0.0",
+  "description": "Created with CodeSandbox",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/imbhargav5/mach-store.git"
+  },
+  "keywords": [],
+  "author": "Bhargav Ponnapalli <bhargavponnapalli.5@gmail.com> (https://github.com/imbhargav5)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/imbhargav5/mach-store/issues"
+  },
+  "homepage": "https://github.com/imbhargav5/mach-store#readme"
+}
