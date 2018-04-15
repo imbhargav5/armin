@@ -1,0 +1,35 @@
+{
+  "presets": [
+    [
+      "env",
+      {
+        "modules": false,
+        "loose": true,
+        "exclude": ["transform-async-to-generator", "transform-regenerator"],
+        "targets": {
+          "browsers": ["last 2 versions"]
+        }
+      }
+    ],
+    "flow",
+    "react",
+    "stage-0"
+  ],
+  "plugins": ["transform-class-properties"],
+  "env": {
+    "cjs": {
+      "plugins": ["transform-es2015-modules-commonjs"]
+    },
+    "test" :{
+       "presets" : ["env","stage-0","react"],
+    },
+    "example" :{
+      "plugins" : [
+        ["transform-runtime", {
+            "polyfill" : false,
+            "regenerator" : true
+        }]
+      ]
+    }
+  }
+}

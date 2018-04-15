@@ -1,20 +1,95 @@
 {
-  "name": "mach-store",
-  "version": "1.0.0",
-  "description": "Created with CodeSandbox",
-  "main": "index.js",
+  "name": "armin",
+  "version": "0.0.1",
+  "description": "",
+  "main": "lib/armin.js",
+  "module": "lib/armin.es.js",
+  "watch": {
+    "build": "{src,demo}/**/*.js"
+  },
+  "files": [
+    "dist",
+    "lib",
+    "es",
+    "src"
+  ],
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "rollup -c",
+    "clean": "rimraf lib dist es",
+    "lint": "eslint {__tests__,src}/*.js",
+    "example": "BABEL_ENV=example parcel example/index.html",
+    "watch": "npm-watch",
+    "test:watch": "cross-env BABEL_ENV=test NODE_ENV=test jest --watchAll",
+    "test": "cross-env BABEL_ENV=test jest",
+    "pretty": "prettier --write '{__tests__,src}/*.js'",
+    "prebuild": "npm run clean",
+    "prepublish": "npm run pretty && npm run lint && npm run test && npm run build",
+    "postpublish": "git push origin master --tags"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/imbhargav5/mach-store.git"
+    "url": "git+https://github.com/imbhargav5/armin.git"
   },
-  "keywords": [],
+  "keywords": [
+    "armin",
+    "state-management",
+    "finite-state-machine"
+  ],
   "author": "Bhargav Ponnapalli <bhargavponnapalli.5@gmail.com> (https://github.com/imbhargav5)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/imbhargav5/mach-store/issues"
+    "url": "https://github.com/imbhargav5/armin/issues"
   },
-  "homepage": "https://github.com/imbhargav5/mach-store#readme"
+  "homepage": "https://github.com/imbhargav5/armin#readme",
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-eslint": "8.2.3",
+    "babel-jest": "22.4.3",
+    "babel-plugin-external-helpers": "6.22.0",
+    "babel-plugin-transform-async-to-generator": "6.24.1",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-plugin-transform-runtime": "6.23.0",
+    "babel-polyfill": "6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-flow": "^6.23.0",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-0": "6.24.1",
+    "babel-register": "^6.26.0",
+    "cross-env": "5.1.3",
+    "eslint": "4.16.0",
+    "eslint-plugin-react": "7.6.1",
+    "immer": "1.2.1",
+    "isomorphic-fetch": "2.2.1",
+    "jest": "22.4.3",
+    "npm-watch": "0.3.0",
+    "parcel-bundler": "1.5.1",
+    "prettier": "1.10.2",
+    "prop-types": "15.6.0",
+    "react-dom": "16.3.0",
+    "rimraf": "2.6.2",
+    "rollup": "0.55.3",
+    "rollup-plugin-babel": "^3.0.3",
+    "styled-components": "3.1.4"
+  },
+  "dependencies": {
+    "core-js": "2.5.5",
+    "create-react-context": "0.2.2",
+    "lodash": "4.17.5"
+  },
+  "peerDependencies": {
+    "prop-types": "^15.5.0",
+    "react": "^15.0.0 || ^16.0.0"
+  },
+  "npmName": "armin",
+  "npmFileMap": [
+    {
+      "basePath": "/dist/",
+      "files": [
+        "*.js"
+      ]
+    }
+  ],
+  "jest": {
+    "testRegex": "(/__tests__/.*\\.js)$"
+  }
 }
