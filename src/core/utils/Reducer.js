@@ -19,9 +19,9 @@ export default class Reducer {
       computeNextValue = configuration;
     } else if (_.isObject(configuration)) {
       const {
-        forStates: _forStates = allStates,
-        computeNextValue: _computeNextValue = NOOP_COMPUTE_NEXT_VALUE,
-        computeNextState: _computeNextState = NOOP_COMPUTE_NEXT_STATE
+        from: _forStates = allStates,
+        setValue: _computeNextValue = NOOP_COMPUTE_NEXT_VALUE,
+        setState: _computeNextState = NOOP_COMPUTE_NEXT_STATE
       } = configuration;
       if (
         !_.isFunction(computeNextValue) ||

@@ -7,12 +7,12 @@ const toggler = {
   state: "hiding",
   reducers: {
     show: {
-      forStates: ["hiding"],
-      computeNextState: () => "showing"
+      from: ["hiding"],
+      setState: () => "showing"
     },
     hide: {
-      forStates: ["showing"],
-      computeNextState: () => "hiding"
+      from: ["showing"],
+      setState: () => "hiding"
     }
   }
 };
@@ -23,18 +23,18 @@ const counter = {
   value: 0,
   reducers: {
     increment: {
-      forStates: ["ready", "running"],
-      computeNextState: () => "running",
-      computeNextValue: ({ value }) => value + 1
+      from: ["ready", "running"],
+      setState: () => "running",
+      setValue: ({ value }) => value + 1
     },
     stop: {
-      forStates: ["ready", "running"],
-      computeNextState: () => "stopped"
+      from: ["ready", "running"],
+      setState: () => "stopped"
     },
     restart: {
-      forStates: ["stopped"],
-      computeNextState: () => "ready",
-      computeNextValue: ({ value }) => 0
+      from: ["stopped"],
+      setState: () => "ready",
+      setValue: ({ value }) => 0
     }
   },
   effects: {

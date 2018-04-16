@@ -8,19 +8,19 @@ const { Provider, Consumer } = createMachine({
   value: 0,
   reducers: {
     increment: {
-      computeNextValue: ({ value, state }, payload = 1) => value + payload,
-      computeNextState: () => "running"
+      setValue: ({ value, state }, payload = 1) => value + payload,
+      setState: () => "running"
     },
     decrement: {
-      forStates: ["running"],
-      computeNextValue: ({ value, state }, payload = 1) => value - payload,
-      computeNextState: (opts, nextValue) =>
-        nextValue <= 0 ? "stopped" : "running"
+      from: ["running"],
+      setValue: ({ value, state }, payload = 1) => value - payload,
+      setState: (opts, setValue) =>
+        setValue <= 0 ? "stopped" : "running"
     },
     stop: {
-      forStates: ["ready", "running"],
-      computeNextValue: ({ value }) => value,
-      computeNextState: () => "stopped"
+      from: ["ready", "running"],
+      setValue: ({ value }) => value,
+      setState: () => "stopped"
     }
   },
   effects: {

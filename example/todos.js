@@ -16,15 +16,15 @@ const { Provider, Consumer } = createMachine({
   },
   reducers: {
     editTodo: {
-      fromStates: ["ready"],
-      computeNextState: () => "editing"
+      from: ["ready"],
+      setState: () => "editing"
     },
     finishEditing: {
-      fromStates: ["editing"],
-      computeNextState: () => "ready"
+      from: ["editing"],
+      setState: () => "ready"
     },
     toggleIsCompleted: {
-      computeNextValue: ({ value }, index, isCompleted) => ({
+      setValue: ({ value }, index, isCompleted) => ({
         ...value,
         list: [
           ...value.list.slice(0, index),
@@ -37,8 +37,7 @@ const { Provider, Consumer } = createMachine({
       })
     },
     addTodo: {
-      computeNextValue: ({ value }, { text, isCompleted }) => {
-        console.log("adding todo");
+      setValue: ({ value }, { text, isCompleted }) => {
         return {
           ...value,
           list: [...value.list, { text, isCompleted }]
