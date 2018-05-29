@@ -4,6 +4,24 @@ Declarative state machines for React!
 
 React Component state is a powerful way of managing state within a component, but can we do more? Can we create and maintain state which is more readable and self-explantory and powerful at the same time? 
 
+### Motivation
+
+Let's compare these two examples.
+
+```javascript
+<button disabled={counter.can.decrement && counter.is.started} onClick={counter.increment}> Delete </button>
+```
+
+vs 
+
+```javascript
+<button disabled={counter.value > 0 && counter.value < counter.MAX_VALUE} onClick={counter.increment} > Decrement </button>
+```
+
+The first one is extremely readable and you can immeditately tell what the developer is trying to do in this code. It hardly requires comments. That is the motivation for this project. 
+State machines in Arminjs with meaningful names for states have great potential to make developer experience great for building applications with React.
+
+Let's see how we can build a counter with Arminjs.
 
 ### An async counter example with armin
 
