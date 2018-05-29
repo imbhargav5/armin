@@ -1,6 +1,9 @@
+<p align="center">
+  
 <img src="https://github.com/imbhargav5/armin/blob/master/.github/armin_logo.png"/>
+</p>
 
-Declarative state machines for React!
+<p align="center"> Declarative state machines for React! </p>
 
 # armin
 
