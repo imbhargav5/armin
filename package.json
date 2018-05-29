@@ -1,18 +1,13 @@
 {
   "name": "armin",
   "version": "0.0.1",
-  "description": "",
+  "description": "Declarative state machines for React!",
   "main": "lib/armin.js",
   "module": "lib/armin.es.js",
   "watch": {
     "build": "{src,demo}/**/*.js"
   },
-  "files": [
-    "dist",
-    "lib",
-    "es",
-    "src"
-  ],
+  "files": ["dist", "lib", "es", "src"],
   "scripts": {
     "build": "rollup -c",
     "clean": "rimraf lib dist es",
@@ -23,19 +18,17 @@
     "test": "cross-env BABEL_ENV=test jest",
     "pretty": "prettier --write '{__tests__,src}/*.js'",
     "prebuild": "npm run clean",
-    "prepublish": "npm run pretty && npm run lint && npm run test && npm run build",
+    "prepublish":
+      "npm run pretty && npm run lint && npm run test && npm run build",
     "postpublish": "git push origin master --tags"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/imbhargav5/armin.git"
   },
-  "keywords": [
-    "armin",
-    "state-management",
-    "finite-state-machine"
-  ],
-  "author": "Bhargav Ponnapalli <bhargavponnapalli.5@gmail.com> (https://github.com/imbhargav5)",
+  "keywords": ["armin", "state-management", "finite-state-machine"],
+  "author":
+    "Bhargav Ponnapalli <bhargavponnapalli.5@gmail.com> (https://github.com/imbhargav5)",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/imbhargav5/armin/issues"
@@ -84,9 +77,7 @@
   "npmFileMap": [
     {
       "basePath": "/dist/",
-      "files": [
-        "*.js"
-      ]
+      "files": ["*.js"]
     }
   ],
   "jest": {
