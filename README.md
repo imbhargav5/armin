@@ -5,10 +5,12 @@
 
 <p align="center"> Declarative state machines for React! </p>
 
-# armin
-
+<hr/>
+<p align="center">
 React Component state is a powerful way of managing state within a component, but can we do more? Can we create and maintain state which is more readable and self-explantory and powerful at the same time? 
+ </p>
 
+<hr/>
 
 ## Features : 
 
