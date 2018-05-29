@@ -12,14 +12,10 @@ React Component state is a powerful way of managing state within a component, bu
 
 <hr/>
 
-## Features : 
 
-  - State machine creation is similar to the api of Rematch
-  - Uses new React Context for data flow
-  - Async actions are supported
-  - Multiple state machines are supported but you can subscribe to only the ones you need
-    within a component
- 
+## Quick Example
+
+
 
 ## Motivation
 
@@ -46,7 +42,20 @@ vs
 The first one is extremely readable and you can immeditately tell what the developer is trying to do in this code. It hardly requires comments. That is the motivation for this project. 
 State machines in Arminjs with meaningful names for states have great potential to make developer experience great for building applications with React.
 
+
+## Features : 
+
+  - State machine creation is similar to the api of <a href="https://github.com/rematch/rematch">Rematch</a>
+  - Uses the new 16.3 React Context API for data flow across components
+  - Async actions are supported
+  - Multiple state machines are supported but you can subscribe to only the ones you need
+    within a component
+ 
+
+## Examples
+
 Let's see how we can build a counter with Arminjs.
+
 
 ### Single State Machine -> An async counter example with armin
 
@@ -144,6 +153,8 @@ const { Provider, Consumer } = createMachine({
 
 ### Multiple state machines
 
+Just like above, but we can create multiple machines at once and then subscribe to only the ones we need to ensure maximum performance during rerenders on update.
+
 ```javascript
 
 import {init} from "armin"
@@ -200,5 +211,9 @@ class MyRootComponent extends Component{
 
 ```
 
+
+### License
+
+MIT
 
 
