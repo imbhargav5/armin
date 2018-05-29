@@ -1,6 +1,8 @@
-# armin
+<img src="https://github.com/imbhargav5/armin/blob/master/.github/logo.svg"/>
 
 Declarative state machines for React!
+
+# armin
 
 React Component state is a powerful way of managing state within a component, but can we do more? Can we create and maintain state which is more readable and self-explantory and powerful at the same time? 
 
