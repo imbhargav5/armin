@@ -15,6 +15,38 @@ React Component state is a powerful way of managing state within a component, bu
 
 ## Quick Example
 
+```javascript
+import {createMachine} from "armin"
+
+const ViewToggler = createMachine({
+  allStates: ["visible", "hidden"], 
+  state : "visible",
+  reducers : {
+    hide : {
+      from : ["visible"],
+      setState : () => "hidden"
+    },
+    show : {
+      from : ["hidden"],
+      setState : () => "visible"
+    }
+  }
+})
+
+// In your component's render method
+
+<ViewToggler.Provider>
+   ...
+      <ViewToggler.Consumer>
+        {toggler => <>
+            <button disabled={toggler.is.visible} onClick={toggler.show} > Show </button>
+            <button disabled={toggler.is.hidden} onClick={toggler.hide} > Hide </button>
+        </>}
+      </ViewToggler.Consumer>
+   ...    
+</ViewToggler.Provider>
+
+```
 
 
 ## Motivation
