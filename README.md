@@ -1,4 +1,4 @@
-<img src="https://github.com/imbhargav5/armin/blob/master/.github/logo.svg"/>
+<img src="https://github.com/imbhargav5/armin/blob/master/.github/armin_logo.png"/>
 
 Declarative state machines for React!
 
