@@ -80,6 +80,8 @@ const { Provider, Consumer } = createMachine({
       setValue: ({ value, state }, payload = 1) => value - payload,
       setState: (opts, setValue) =>
         setValue <= 0 ? "stopped" : "running"
+      // setState function has access to the newValue that was generated in setValue as the second argument. Opts 
+      // contains current value and current state.
     },
     stop: {
       from: ["ready", "running"],
